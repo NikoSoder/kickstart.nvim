@@ -152,20 +152,35 @@ require('lazy').setup({
     },
   },
 
+  -- {
+  -- Theme inspired by Atom
+  -- 'navarasu/onedark.nvim',
+  -- priority = 1000,
+  -- config = function()
+  -- move this to after/plugin?
+  -- require('onedark').setup {
+  -- Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+  --       style = 'cool',
+  --       transparent = true
+  --     }
+  --     vim.cmd.colorscheme 'onedark'
+  --   end,
+  -- },
+
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    "ellisonleao/gruvbox.nvim",
     priority = 1000,
     config = function()
-      -- move this to after/plugin?
-      require('onedark').setup {
-        -- Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-        style = 'cool',
-        -- transparent = true
+      require("gruvbox").setup {
+        transparent_mode = true,
       }
-      vim.cmd.colorscheme 'onedark'
+      vim.o.background = "dark" -- or "light" for light mode
+      vim.cmd.colorscheme 'gruvbox'
     end,
   },
+
+  -- icons
+  { 'nvim-tree/nvim-web-devicons' },
 
   {
     -- Set lualine as statusline
@@ -173,8 +188,8 @@ require('lazy').setup({
     -- See `:help lualine.txt`
     opts = {
       options = {
-        icons_enabled = false,
-        theme = 'onedark',
+        icons_enabled = true,
+        theme = 'gruvbox_dark',
         component_separators = '|',
         section_separators = '',
       },
