@@ -224,6 +224,11 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup {
 
   -- [[ Plugin Specs list ]]
+  {
+    'folke/trouble.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    opts = {},
+  },
 
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
