@@ -154,6 +154,10 @@ vim.opt.scrolloff = 10
 -- ESC to jk
 vim.keymap.set('i', 'jk', '<ESC>', { silent = true })
 
+-- Keep cursor centered when scrolling
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
